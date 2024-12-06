@@ -20,6 +20,8 @@ function App() {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Interactive Charts with React and Chart.js</h1>
+      <hr></hr>
+      <h2>Financial Data Dashboard</h2>
       <BarChart data={chartData} />
       <br></br>
       <LineChart data ={chartData} />
