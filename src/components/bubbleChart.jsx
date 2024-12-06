@@ -1,6 +1,6 @@
 import ChartComponent from './chartComponent';
 
-const BarChart = ({ data }) => {
+const BubbleChart = ({ data }) => {
     const barChartData = {
       labels: data.months,
       datasets: [
@@ -20,8 +20,8 @@ const BarChart = ({ data }) => {
           },
         },
       };
-      return <ChartComponent type="bar" data={barChartData} options={barChartOptions} />;
+      return <ChartComponent type="bubble" data={barChartData} options={barChartOptions} />;
     };
 
 
-export default BarChart;
+export default BubbleChart;

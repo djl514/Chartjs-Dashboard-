@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BarChart from './components/barChart';
+import BubbleChart from './components/bubbleChart';
 
 function App() {
   const [chartData, setChartData] = useState(null);
@@ -17,6 +18,8 @@ function App() {
     <div style={{ textAlign: 'center' }}>
       <h1>Dynamic Charts with React and Chart.js</h1>
       <BarChart data={chartData} />
+      <br></br>
+      <BubbleChart data ={chartData} />
     </div>
   );
 }
