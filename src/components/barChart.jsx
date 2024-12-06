@@ -16,6 +16,27 @@ function BarChart({ data }){
     const barChartOptions = {
         scales: {
           y: {
+            ticks: {
+                callback: function(value, index, ticks) {
+                    return '$' + value;
+                }
+            },
+            title: {
+                display: true,
+                align: 'center',
+                text: 'Sales',
+                font: {
+                  family: 'Arial',
+                  size: 14,
+                  weight: 'bold',
+                },
+                padding: {
+                  top: 10,
+                  bottom: 5,
+                  left: 0,
+                  right: 0,
+                },
+              },      
             beginAtZero: true,
           },
         },

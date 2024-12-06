@@ -1,7 +1,7 @@
 import ChartComponent from './chartComponent';
 
 function LineChart({ data }){
-    const barChartData = {
+    const lineChartData = {
       labels: data.months,
       datasets: [
         {
@@ -13,14 +13,35 @@ function LineChart({ data }){
         },
       ],
     };
-    const barChartOptions = {
+    const lineChartOptions = {
         scales: {
           y: {
+            ticks: {
+                callback: function(value, index, ticks) {
+                    return '$' + value;
+                }
+            },
+            title: {
+                display: true,
+                align: 'center',
+                text: 'Profits',
+                font: {
+                  family: 'Arial',
+                  size: 14,
+                  weight: 'bold',
+                },
+                padding: {
+                  top: 10,
+                  bottom: 5,
+                  left: 0,
+                  right: 0,
+                },
+              },      
             beginAtZero: true,
           },
         },
       };
-      return <ChartComponent type="line" data={barChartData} options={barChartOptions} />;
+      return <ChartComponent type="line" data={lineChartData} options={lineChartOptions} />;
     };
 
 

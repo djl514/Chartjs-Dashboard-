@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './App.css';
 import BarChart from './components/barChart';
 import BubbleChart from './components/bubbleChart';
 import LineChart from './components/lineChart';

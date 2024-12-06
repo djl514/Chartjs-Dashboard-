@@ -1,7 +1,7 @@
 import ChartComponent from './chartComponent';
 
 const BubbleChart = ({ data }) => {
-    const barChartData = {
+    const bubbleChartData = {
       labels: data.expenses,
       datasets: [
         {
@@ -13,14 +13,61 @@ const BubbleChart = ({ data }) => {
         },
       ],
     };
-    const barChartOptions = {
+    const bubbleChartOptions = {
         scales: {
+          x: {
+            ticks: {
+                callback: function(value, index, ticks) {
+                    return '$' + value;
+                }
+            },
+            title: {
+                display: true,
+                align: 'center',
+                text: 'Expenses',
+                font: {
+                  family: 'Arial',
+                  size: 14,
+                  weight: 'bold',
+                },
+                padding: {
+                  top: 10,
+                  bottom: 5,
+                  left: 0,
+                  right: 0,
+                },
+              },      
+
+          },
           y: {
-            beginAtZero: true,
+            min: Math.min(...data.sales),
+            max: Math.max(...data.sales),
+            ticks: {
+                maxTicksLimit: 5,
+                callback: function(value, index, ticks) {
+                    return '$' + value;
+                }
+            },
+            title: {
+                display: true,
+                align: 'center',
+                text: 'Sales',
+                font: {
+                  family: 'Arial',
+                  size: 14,
+                  weight: 'bold',
+                },
+                padding: {
+                  top: 10,
+                  bottom: 5,
+                  left: 0,
+                  right: 0,
+                },
+              },      
           },
         },
       };
-      return <ChartComponent type="bubble" data={barChartData} options={barChartOptions} />;
+      return <ChartComponent type="bubble" data={bubbleChartData} options={bubbleChartOptions} />;
     };
 
 
