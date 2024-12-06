@@ -1,6 +1,6 @@
 import ChartComponent from './chartComponent';
 
-const BarChart = ({ data }) => {
+function BarChart({ data }){
     const barChartData = {
       labels: data.months,
       datasets: [

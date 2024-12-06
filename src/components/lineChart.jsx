@@ -1,14 +1,14 @@
 import ChartComponent from './chartComponent';
 
-const BubbleChart = ({ data }) => {
+function LineChart({ data }){
     const barChartData = {
-      labels: data.expenses,
+      labels: data.months,
       datasets: [
         {
-          label: 'Combined Metrics',
+          label: 'Monthly Profits',
           data: data.profits,
-          backgroundColor: 'rgba(79,121,66, 0.2)',
-          borderColor: 'rgba(79,121,66, 1)',
+          backgroundColor: 'rgba(222,161,147, 0.2)',
+          borderColor: 'rgba(222,161,147, 1)',
           borderWidth: 1,
         },
       ],
@@ -20,8 +20,8 @@ const BubbleChart = ({ data }) => {
           },
         },
       };
-      return <ChartComponent type="bubble" data={barChartData} options={barChartOptions} />;
+      return <ChartComponent type="line" data={barChartData} options={barChartOptions} />;
     };
 
 
-export default BubbleChart;
+export default LineChart;
